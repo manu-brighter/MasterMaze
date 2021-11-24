@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+p {
+    font-size: 3vh;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.wrapper {
+    max-width: auto;
+    max-height: auto;
+    margin: auto;
+}
+
+.solve {
+    float: right;
+}
+
+.blocktypes {
+    float: right;
+    /*background: teal;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+
+}
+
+.block {
+    margin: 4%;
+}
+
+.mapwrapper {
+    position: absolute;
+    width: 65%;
+    height: 100%;
+    float: left;
+    margin: 1% 7%;
+   /* background: mediumvioletred;*/
+}
+
+
+.UI {
+    margin: 4% 8%;
+    position: relative;
+    width: 35%;
+    height: 100%;
+    float: right;
+    /*background: skyblue;*/
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "."
+      "."
+      ".";
+}
+
+.blockbutton {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+#custom-handle1,
+#custom-handle2 {
+    width: 3em;
+    height: 1.6em;
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
+}
+
+#slider1,
+#slider2 {
+    /*background: lightgreen;*/
+    background: white;
+}
+
+.sliders {
+    /*background: violet;*/
+    margin: 5%;
+}
+
+.map .block {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+}
+
+.map .stone {
+    background-image: url("./../img/stone.jpg");
+}
+
+.map .dirt {
+    background-image: url("./../img/dirt.jpg");
+}
+
+.map .treasure {
+    background-image: url("./../img/treasure.jpg");
+}
+
+.map .start {
+    background-image: url("./../img/start.jpg");
+}
+
+.map .walk {
+    background-image: url("./../img/walk.jpg");
+}
+
+.map .diagonalwalk {
+    background-image: url("./../img/diagonalwalk.jpg");
+}
+
+.map .default {
+    background-image: url("./../img/default.jpg");
+}
+
+.map .west {
+    transform: rotate(0deg);
+}
+
+.map .east {
+    transform: rotate(180deg);
+}
+
+.map .north {
+    transform: rotate(90deg);
+}
+
+.map .south {
+    transform: rotate(270deg);
+}

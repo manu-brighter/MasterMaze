@@ -1,0 +1,91 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MazeMaster</title>
+  <meta name="description" content="DESCRIPTION">
+  <meta name="author" content="YOUR NAME">
+  <!--<link rel="icon" href="assets/favicon.ico">-->
+  <link rel="stylesheet" href="assets/css/blocks.css">
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+  <script src="./assets/js/map.js"></script>
+  <script src="./assets/js/aStarAlgorythmV2.js"></script>
+  <script src="./assets/js/renderNewMap.js"></script>
+  <script src="./assets/js/UI.js"></script>
+
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="game">
+      <div class="mapwrapper">
+        <div class="map"></div>
+      </div>
+      <div class="UI">
+
+        <div class="sliders">
+
+          <div id="slider1">
+            <div id="custom-handle1" class="ui-slider-handle"></div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div id="slider2">
+            <div id="custom-handle2" class="ui-slider-handle"></div>
+          </div>
+
+        </div>
+
+
+        <div class="blocktypes">
+          <div class="button" id="dirtbutton" onclick="dirtbutton()">
+            <img class="blockbutton" src="./assets/img/dirt.jpg"></img>
+          </div>
+          <div class="button"  id="stonebutton" onclick="stonebutton()">
+            <img class="blockbutton" src="./assets/img/stone.jpg"></img>
+          </div>
+          <div class="button" id="startbutton" onclick="startbutton()">
+            <img class="blockbutton" src="./assets/img/start.jpg"></img>
+          </div>
+          <div class="button" id="treasurebutton" onclick="treasurebutton()">
+            <img class="blockbutton" src="./assets/img/treasure.jpg"></img>
+          </div>
+          <div class="buttontext">
+            <p>Dirt</p>
+          </div>
+          <div class="buttontext">
+            <p>Stone</p>
+          </div>
+          <div class="buttontext">
+            <p>Start</p>
+          </div>
+          <div class="buttontext">
+            <p>Treasure</p>
+          </div>
+        </div>
+
+        <div class="solve">
+
+          <button id="SolveButton">Solve</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
