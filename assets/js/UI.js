@@ -1,11 +1,20 @@
 
 const min_value = 10;
 const max_value = 100;
-let valueslider1 = min_value;
-let valueslider2 = min_value;
-let current_block_type = "dirt";
+/*
+$(() => {
+    // init
+    eventManager();
 
+    createUiElements();
+    
+    scrennSizeRendere();
 
+    
+    // Build: 
+    BuildMap();
+});
+*/
 function mapSizer(valueslider1, valueslider2){
 
     const width = valueslider1;
@@ -62,20 +71,10 @@ function eventManager() {
 }
 
 $(() => {
-    // init
-    eventManager();
 
-    createUiElements();
-    
-    scrennSizeRendere();
-
-    
-    // Build: 
-    BuildMap();
-});
-
-$(() => {
-    eventManager();
+    let valueslider1 = min_value;
+    let valueslider2 = min_value;
+    let current_block_type = "dirt";
 
     $(function () {
         var handle1 = $("#custom-handle1");
