@@ -1,20 +1,31 @@
-
+// min & max valu of the sliders
 const min_value = 10;
 const max_value = 100;
-/*
-$(() => {
-    // init
-    eventManager();
+let current_block_type = null;
+let current_map = [];
 
-    createUiElements();
-    
-    scrennSizeRendere();
+function blockSetter(x, y){
 
-    
-    // Build: 
-    BuildMap();
-});
-*/
+    let map = current_map;
+    let blocktype = null;
+    blocktype = current_block_type === "dirt" ? " " : blocktype;
+    blocktype = current_block_type === "stone" ? "#" : blocktype;
+    blocktype = current_block_type === "start" ? "&" : blocktype;
+    blocktype = current_block_type === "treasure" ? "X" : blocktype;
+
+    if (blocktype != null){
+    map[y][x] = blocktype;
+    };
+    loadMap(map);
+
+};
+
+
+
+
+
+
+
 function mapSizer(valueslider1, valueslider2){
 
     const width = valueslider1;
@@ -33,6 +44,7 @@ function mapSizer(valueslider1, valueslider2){
     };
 
     loadMap(map);
+    current_map = map;
     return;
 };
 
@@ -66,15 +78,10 @@ function treasurebutton(){
     changeMouse("treasure");
 };
 
-function eventManager() {
-
-}
-
-$(() => {
+function iniateSliders(){
 
     let valueslider1 = min_value;
     let valueslider2 = min_value;
-    let current_block_type = "dirt";
 
     $(function () {
         var handle1 = $("#custom-handle1");
@@ -84,8 +91,8 @@ $(() => {
             max: max_value,
             min: min_value,
             change: function(event, ui){
-                valueslider1 = ui.value
-                mapSizer(valueslider1, valueslider2)
+                valueslider1 = ui.value;
+                mapSizer(valueslider1, valueslider2);
             },
             create: function () {
                 handle1.text($(this).slider("value"));
@@ -104,8 +111,8 @@ $(() => {
             max: max_value,
             min: min_value,
             change: function(event, ui){
-                valueslider2 = ui.value
-                mapSizer(valueslider1, valueslider2)
+                valueslider2 = ui.value;
+                mapSizer(valueslider1, valueslider2);
             },
             create: function () {
                 handle2.text($(this).slider("value"));
@@ -116,4 +123,4 @@ $(() => {
         });
     });
 
-});
+};
