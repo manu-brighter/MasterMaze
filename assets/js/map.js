@@ -51,7 +51,7 @@ function renderMap() {
             top: posY + "px"
         })
     });
-}
+};
 
 function loadMap(data) {
     // Clear Old Map
@@ -79,9 +79,8 @@ function loadMap(data) {
         const col = data[y];
         for (let x in col) {
             const block = col[x];
-            $(".map").append('<div class="block ' + blocks[block] + '" id="blockx' + x + 'y' + y + '" onclick="blockSetter(' + x + ', ' + y + ')" ' + 'data-x="' + x + '" data-y="' + y + '"></div>')
-            //('<div class="block id="blockx' + x + 'y' + y + '" onclick="blockSetter(' + x + ', ' + y + ')" ' + blocks[block] + '" data-x="' + x + '" data-y="' + y + '">
-        }
+            $(".map").append('<div class="block ' + blocks[block] + '" id="blockx' + x + 'y' + y + '" onmousemove="blockSetter(' + x + ', ' + y + ')" ' + 'data-x="' + x + '" data-y="' + y + '"></div>')
+            }
     }
 
     // Render Map
