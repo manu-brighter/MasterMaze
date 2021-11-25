@@ -53,7 +53,7 @@ function pathFind(map, isDiagonalAllowed) {
 
         // get smallest blocks that weren't used before from the current version of the closed_list
         let smallest_blocks = getSmallestBlocks(calculated_blocks);
-        
+
 
         // TODO: update block doesn't work as it should
 
@@ -85,13 +85,13 @@ function pathFind(map, isDiagonalAllowed) {
             current_smallest_block.is_used = true;
             calculated_blocks.block = current_smallest_block;
 
-            if(calculated_blocks.block.x === 7 && calculated_blocks.block.y === 2){
+            if (calculated_blocks.block.x === 7 && calculated_blocks.block.y === 2) {
                 //debugger;
             };
 
             calculated_blocks = searchTreasure(calculated_blocks);
         };
-        
+
         return calculated_blocks;
     };
 

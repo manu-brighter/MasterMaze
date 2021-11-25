@@ -80,7 +80,7 @@ function loadMap(data) {
         for (let x in col) {
             const block = col[x];
             $(".map").append('<div class="block ' + blocks[block] + '" id="blockx' + x + 'y' + y + '" onmousemove="blockSetter(' + x + ', ' + y + ')" ' + 'data-x="' + x + '" data-y="' + y + '"></div>')
-            }
+        }
     }
 
     // Render Map
@@ -117,7 +117,7 @@ function getNewMap(map, wayback) {
 };
 
 // checks in which direction the next block is going to be
-function getDirection(next_block, current_block){
+function getDirection(next_block, current_block) {
 
     let direction = '';
 

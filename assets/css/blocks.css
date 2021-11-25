@@ -18,8 +18,13 @@ p {
     margin: auto;
 }
 
-.solve {
+.lowerButtons {
     float: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    margin-top: 5%;
 }
 
 .blocktypes {
@@ -81,8 +86,7 @@ p {
 
 #slider1,
 #slider2 {
-    /*background: lightgreen;*/
-    background: white;
+    background: lightgreen;
 }
 
 .sliders {

@@ -24,6 +24,7 @@
   <script src="./assets/js/map.js"></script>
   <script src="./assets/js/Pathfinding.js"></script>
   <script src="./assets/js/UI.js"></script>
+  <script src="./assets/js/generateMap.js"></script>
   
 
 
@@ -35,6 +36,7 @@
       <div class="mapwrapper">
         <div class="map"></div>
       </div>
+      
       <div class="UI">
 
         <div class="sliders">
@@ -79,11 +81,28 @@
           </div>
         </div>
 
+        <div class="lowerButtons">
         <div class="solve">
 
           <button id="SolveButton" onclick="solveMap()">Solve</button>
 
         </div>
+        <div class="boarder">
+
+          <button id="BoarderButton" onclick="setBoarders()">Set Boarders</button>
+
+        </div>
+        <div class="clear">
+
+          <button id="ClearButton" onclick="clearMap()">Clear Map</button>
+
+        </div>
+        <div class="clearFootsteps">
+
+          <button id="ClearFootstepsButton" onclick="clearFootsteps()">Clear Footsteps</button>
+
+        </div>
+      </div>
       </div>
     </div>
   </div>

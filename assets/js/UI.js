@@ -1,7 +1,7 @@
 // min & max valu of the sliders
 const min_value = 10;
 const max_value = 100;
-const isDiagonalAllowed = false;
+const isDiagonalAllowed = true;
 let current_block_type = null;
 let current_map = [];
 let mouseDown = 0;
@@ -17,25 +17,42 @@ function blockSetter(x, y) {
 
     if (blocktype != null) {
         if (mouseDown === 1) {
-            map[y][x] = blocktype;
+            if (blocktype === " " || blocktype === "#") {
+                map[y][x] = blocktype;
+            } else if (blocktype === "&" || blocktype === "X") {
+
+                console.log("test");
+
+                let block = getBlockByType(current_map, blocktype);
+                if (typeof block !== "undefined") {
+                    map[block.y][block.x] = " ";
+                };
+
+                map[y][x] = blocktype;
+            };
         };
     };
     loadMap(map);
+    current_map = map;
 
 };
 
 function solveMap() {
+    clearFootsteps();
     // calculate path and put it in the map
     const wayback = pathFind(current_map, isDiagonalAllowed);
     const map = getNewMap(current_map, wayback);
 
     loadMap(map);
+    current_map = map;
 
 };
 
 function mouseCheck() {
     document.body.onmousedown = function () {
-        ++mouseDown;
+        if (mouseDown === 0) {
+            ++mouseDown;
+        };
     };
     document.body.onmouseup = function () {
         --mouseDown;
@@ -54,9 +71,9 @@ function mapSizer(valueslider1, valueslider2) {
     const previous_map = current_map;
     const map = [];
 
-    for (var i = 1; i <= height; i++) {
+    for (let i = 1; i <= height; i++) {
         let row = [];
-        for (var s = 1; s <= width; s++) {
+        for (let s = 1; s <= width; s++) {
             row.push(" ");
         };
 
@@ -67,11 +84,11 @@ function mapSizer(valueslider1, valueslider2) {
     for (const i in map) {
 
         if (typeof previous_map[i] !== "undefined") {
-            const row = map[i]; 
+            const row = map[i];
 
             for (const s in row) {
                 if (typeof previous_map[i][s] !== "undefined") {
-                    
+
                     map[i][s] = previous_map[i][s];
                 };
             };
@@ -81,6 +98,64 @@ function mapSizer(valueslider1, valueslider2) {
     loadMap(map);
     current_map = map;
     return;
+};
+
+function setBoarders() {
+    const map = current_map;
+
+    for (const i in map) {
+        const row = map[i];
+        for (const s in row) {
+
+            console.log(map.length, row.length);
+
+            if (i == 0 || i == map.length - 1 || s == 0 || s == row.length - 1) {
+                map[i][s] = "#";
+            };
+
+        };
+    };
+
+    current_map = map
+    loadMap(map);
+};
+
+function clearMap() {
+    const map = current_map;
+
+    for (const i in map) {
+        const row = map[i];
+        for (const s in row) {
+            map[i][s] = " ";
+        };
+    };
+
+    current_map = map
+    loadMap(map);
+};
+
+function clearFootsteps() {
+    const map = current_map;
+
+    for (const i in map) {
+        const row = map[i];
+        for (const s in row) {
+            const column = row[s]
+            if (column === "N" ||
+                column === "NE" ||
+                column === "E" ||
+                column === "SE" ||
+                column === "S" ||
+                column === "SW" ||
+                column === "W" ||
+                column === "NW") {
+                map[i][s] = " ";
+            };
+        };
+    };
+
+    current_map = map
+    loadMap(map);
 };
 
 function changeMouse(type) {
@@ -122,7 +197,7 @@ function iniateSliders() {
     let valueslider2 = min_value;
 
     $(function () {
-        var handle1 = $("#custom-handle1");
+        let handle1 = $("#custom-handle1");
         $("#slider1").slider({
 
             max: max_value,
@@ -141,7 +216,7 @@ function iniateSliders() {
     });
 
     $(function () {
-        var handle2 = $("#custom-handle2");
+        let handle2 = $("#custom-handle2");
         $("#slider2").slider({
 
             max: max_value,
