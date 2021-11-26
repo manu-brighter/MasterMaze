@@ -134,6 +134,20 @@ function clearMap() {
     loadMap(map);
 };
 
+function clearMapToStone() {
+    const map = current_map;
+
+    for (const i in map) {
+        const row = map[i];
+        for (const s in row) {
+            map[i][s] = "#";
+        };
+    };
+
+    current_map = map
+    loadMap(map);
+};
+
 function clearFootsteps() {
     const map = current_map;
 

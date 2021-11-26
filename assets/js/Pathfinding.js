@@ -11,7 +11,7 @@ function pathFind(map, isDiagonalAllowed) {
 
     // if there is no start or finish, an error message displays
     if (typeof getStartPosFromMap(map) === "undefined") {
-        alert("Keine Start Position gefunden!");
+        alert("Keine Start Position gefunden");
         return;
     };
 
