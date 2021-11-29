@@ -12,7 +12,7 @@ $(() => {
     loadMap(startermap);
 
     // generate map
-    generateNewMap(startermap);
+    //generateNewMap(startermap);
 
     // size map
     mapSizer(min_value, min_value);
