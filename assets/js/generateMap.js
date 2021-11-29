@@ -6,7 +6,7 @@ function generateNewMap(map) {
         "height": map.length,
         "width": map[0].length
     };
-    const number_of_points = 4;
+    const number_of_points = 1;
     const min_snake_length = 2;
     const max_snake_length = 10;
     let snake = []
@@ -19,9 +19,9 @@ function generateNewMap(map) {
     for (const i in points) {
         const current_point = points[i];
         snake[i] = getRndmSnake(current_point, min_snake_length, max_snake_length, map_dimension, map);
-/*
-        console.log(snake[i]);
 
+        console.log("out: ", snake[i]);
+/*
         for (const s in snake[i]) {
             const current_block = snake[i][s];
         
@@ -76,8 +76,13 @@ function getRndmSnake(start, min_snake_length, max_snake_length, map_dimension, 
     snake.push(next_block);
     let neighbours = getNeighbours(next_block, false);
 
+    
+
     for (const i in neighbours){
         const block = neighbours[i];
+
+        let isValid = isNeighbourValidForMapGeneration(block, map_dimension, map)
+        console.log(block, isValid);
 
         if (isNeighbourValidForMapGeneration(block, map_dimension, map)){
             valid_neighbours.push(block);
