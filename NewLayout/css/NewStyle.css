@@ -1,9 +1,32 @@
-#page-content-wrapper{
-  background-color: peachpuff;
-  height: 100vh;
+/*Color Palette
+--gainsboro: #ddddddff;
+--sacramento-state-green: #0e402dff;
+--persian-green: #2a9d8fff;
+--royal-purple: #7d5ba6ff;
+--english-violet: #48284aff;*/
+
+.navbar{
+  background: rgb(72,40,74);
+  background: linear-gradient(90deg, rgba(72,40,74,1) 0%, rgba(72,40,74,1) 0%, rgba(14,64,45,1) 100%);
+  height: 70px;
 }
 
 
+.map-picture{
+  height: 50px;
+  max-width: 250px;
+}
+
+.save-icons{
+  color: #7d5ba6ff;
+  position: absolute;
+  top: 70px;
+  margin: 20px;
+  }
+
+  #hilfe{
+    margin: 40px;
+  }
 /* Sidebar */
 #sidebar-wrapper{
   z-index:1;
@@ -11,13 +34,12 @@
   width:0;
   height:100%;
   overflow-y:hidden;
-  background: #5b4282;
-  opacity:0.9;
+  background: #48284aff;
+  /*opacity:0.9;*/
 	transition:all .5s;
 	display:flex;
 	align-items:center;
 }
-
 /* Main Content */
 #page-content-wrapper{
   width: 100%;	
@@ -26,9 +48,14 @@
 	transition:all .5s;
 }
 
-#menu-toggle{
+#menu-left-toggle{
 	transition:all .3s;
-	font-size:2em;
+  color: #7d5ba6ff;
+}
+#menu-right-toggle{
+  float: right;
+	transition:all .3s;
+  color: #2a9d8fff;
 }
 /* Change the width of the sidebar to display it*/
 #wrapper.menuDisplayed #sidebar-wrapper{
@@ -58,10 +85,66 @@
 .sidebar-nav li a {
   display:block;
   text-decoration:none;
-  color:#ddd;
+  color: #ddddddff;
 }
 
 .sidebar-nav li:hover{
-  background:#846bab;
+  background:#7d5ba6ff;
 }
 
+/* Second Sidebar on the right side*/
+.navbar-brand {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+}
+
+/* Sidebar */
+#sidebar-wrapper-right{
+  z-index:1;
+  position: absolute;
+  right: 0px;
+  width:0;
+  height:100%;
+  overflow-y:hidden;
+  background: #0e402dff;
+  /*opacity:0.9;*/
+	transition:all .5s;
+	display:flex;
+	align-items:center;
+}
+
+/* Change the width of the sidebar to display it*/
+#wrapper-right.menuDisplayed #sidebar-wrapper-right{
+  width:250px;
+}
+
+#wrapper-right.menuDisplayed #page-content-wrapper{
+  padding-right:250px;
+}
+
+/* Sidebar styling */
+.sidebar-nav-right{
+  padding:0;
+  list-style:none; 
+	transition:all .5s;
+	width:100%;
+	text-align:center;
+}
+
+.sidebar-nav-right li{
+  line-height:40px;  
+	width:100%;
+	transition:all .3s;
+	padding:10px;
+}
+
+.sidebar-nav-right li a {
+  display:block;
+  text-decoration:none;
+  color: #ddddddff;
+}
+
+.sidebar-nav-right li:hover{
+  background: #2a9d8fff;
+}

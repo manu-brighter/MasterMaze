@@ -2,13 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>Master Maze</title>
+    <title>Maze Master</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/NewStyle.css">
-    <script src="JS/NewJS.js"></script>
-    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -20,33 +17,82 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+
+    <link href="fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/NewStyle.css">
+    <script src="JS/NewJS.js"></script>
 
 </head>
 
 <body>
     <div id="wrapper">
-      <!-- Sidebar -->
-      <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      
-      <!-- Page Content -->
-      <div id="page-content-wrapper">
-        <div class="container-fluid" id="map">
-          <div class="row">
-            <div class="col-lg-12">
-              <a href="#" class="btn" id="menu-toggle"><span class="glyphicon glyphicon-align-justify"></span></a>
-              <h1 class="text-center">Maze Master</h1>
+        <!-- Sidebar left -->
+        <div id="sidebar-wrapper">
+            <div class="save-icons">
+                <i class="fas fa-save fa-3x" class="btn"></i>
+                <i class="fas fa-trash-alt fa-3x" class="btn" id="hilfe"></i>
             </div>
-          </div>
+            
+                <ul class="sidebar-nav">
+                    <li><a href="#">Map 1</a><img src="../assets/img/Map1.jpg" class="map-picture"><img></li>
+                    <li><a href="#">Map 2</a><img src="../assets/img/Map2.jpg" class="map-picture"><img></li>
+                    <li><a href="#">Map 3</a><img src="../assets/img/Map3.jpg" class="map-picture"><img></li>
+                </ul>
+
         </div>
-      </div>
     </div>
-  </body>
+    </div>
+
+    <div id="wrapper-right">
+        <!-- Sidebar right -->
+        <div id="sidebar-wrapper-right">
+            <ul class="sidebar-nav-right">
+                <li><a href="#">Slider</a></li>
+                <li><a href="#">Blocks</a></li>
+                <li><a href="#">Buttons</a></li>
+            </ul>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <i class="fas fa-bars fa-3x" class="btn" id="menu-left-toggle"></i>
+                    </li>
+                </ul>
+
+                <a class="navbar-brand pull-center" href="#">
+                    <img src="../assets/img/Logo.JPG" width="auto" height="70" alt="">
+                </a>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item">
+                        <i class="fas fa-map fa-3x" class="btn" id="menu-right-toggle"></i>
+                    </li>
+                </ul>
+
+            </nav>
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
 
 </html>
