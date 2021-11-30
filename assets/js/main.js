@@ -1,7 +1,7 @@
 $(() => {
 
     // variables
-    const startermap = GAME_MAP1;
+    const startermap = GAME_MAP4;
 
     // init
     iniateSliders();
