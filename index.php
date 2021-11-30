@@ -1,3 +1,12 @@
+<?php
+    include_once 'assets/php/dbh.inc.php';
+    include_once 'assets/php/list.php';
+    include_once 'assets/php/read.php';
+    include_once 'assets/php/create.php';
+    include_once 'assets/php/update.php';
+    include_once 'assets/php/delete.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
