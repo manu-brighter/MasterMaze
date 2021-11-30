@@ -1,7 +1,7 @@
 // min & max valu of the sliders
 const min_value = 10;
 const max_value = 100;
-const isDiagonalAllowed = true;
+let isDiagonalAllowed = false;
 let current_block_type = null;
 let current_map = [];
 let mouseDown = 0;
@@ -63,6 +63,15 @@ function setMapVar(map) {
     current_map = map;
 };
 
+function setDiagonalToTrue() {
+    isDiagonalAllowed = true;
+};
+
+function setDiagonalToFalse() {
+    isDiagonalAllowed = false;
+};
+
+
 function mapSizer(valueslider1, valueslider2) {
 
     const width = valueslider1;
@@ -100,7 +109,7 @@ function mapSizer(valueslider1, valueslider2) {
     return;
 };
 
-function setBoarders() {
+function setBorders() {
     const map = current_map;
 
     for (const i in map) {

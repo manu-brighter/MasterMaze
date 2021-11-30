@@ -15,10 +15,14 @@
   position: relative;
   top: 5px;
   color: goldenrod;
-  font-family: fantasy;
-  font-size: 40px;
+  font-family: 'Road Rage', cursive;
+  font-size: 8vh;
 }
 
+#lowerButtons{
+  font-family: 'Concert One', cursive;
+  font-size: 3.5vh;
+}
 
 .map-picture{
   height: 50px;
@@ -133,6 +137,7 @@
 
 /* Sidebar styling */
 .sidebar-nav-right{
+  color: #ddddddff;
   padding:0;
   list-style:none; 
 	transition:all .5s;

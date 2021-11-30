@@ -24,6 +24,7 @@
         integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Fredoka+One&family=Road+Rage&display=swap');</style>
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <link href="./NewLayout/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
@@ -69,17 +70,20 @@
                             <div id="custom-handle1" class="ui-slider-handle"></div>
                         </div>
                     </li>
-                    <li>
+                    <br>
+                    <br>
+                        <li>
                         <div id="slider2">
                             <div id="custom-handle2" class="ui-slider-handle"></div>
                         </div>
                     </li>
+                    <br>
 
                 </div>
 
                 <ul class="sidebar-nav-right">
 
-                    <li>
+                    <li class="blocktypelist">
                         <div class="blocktypes">
 
                             <div class="button" id="dirtbutton" onclick="dirtbutton()">
@@ -109,43 +113,13 @@
                         </div>
                     </li>
                 </ul>
-                <ul class="sidebar-nav-right">
-
-                    <div class="lowerButtons">
-                        <li>
-                            <div class="solve">
-
-                                <button id="SolveButton" onclick="solveMap()">Solve</button>
-
-                            </div>
-                        </li>
-                        <li>
-                            <div class="boarder">
-
-                                <button id="BoarderButton" onclick="setBoarders()">Set Boarders</button>
-
-                            </div>
-                        </li>
-                        <li>
-                            <div class="clear">
-
-                                <button id="ClearButton" onclick="clearMap()">Clear Map</button>
-
-                            </div>
-                        </li>
-                        <li>
-                            <div class="clearFootsteps">
-
-                                <button id="ClearFootstepsButton" onclick="clearFootsteps()">Clear Footsteps</button>
-
-                            </div>
-                        </li>
-
-                </ul>
-                <ul class="sidebar-nav-right">
-                    <li><a href="#">Future Button1</a></li>
-                    <li><a href="#">Future Button1</a></li>
-                    <li><a href="#">Future Button1</a></li>
+                <ul id="lowerButtons" class="sidebar-nav-right">
+                    <li><a href="#" id="ClearButton" onclick="clearMap()">Clear Map</a></li>
+                    <li><a href="#" id="ClearFootstepsButton" onclick="clearFootsteps()">Clear Footsteps</a></li>
+                    <li><a href="#" id="BorderButton" onclick="setBorders()">Set Map Borders</a></li>
+                    <li><a href="#" id="DiagonalFalseButton" onclick="setDiagonalToFalse()">Diagonal False</a></li>
+                    <li><a href="#" id="DiagonalTrueButton" onclick="setDiagonalToTrue()">Diagonal True</a></li>
+                    <li><a href="#" id="SolveButton" onclick="solveMap()">Solve</a></li>
                 </ul>
         </div>
 

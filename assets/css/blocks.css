@@ -7,9 +7,9 @@ body {
     height: 100vh;
 }
 
-p {
+.buttontext {
     font-size: 3vh;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Fredoka One', cursive;
 }
 
 .wrapper {
@@ -18,23 +18,18 @@ p {
     margin: auto;
 }
 
-.lowerButtons {
-    float: right;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    margin-top: 5%;
-}
-
 .blocktypes {
     float: right;
     /*background: teal;*/
+    color: #ddddddff;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
+}
 
+.blocktypelist {
+    min-height: 170px;
 }
 
 .block {
@@ -86,7 +81,8 @@ p {
 
 #slider1,
 #slider2 {
-    background: lightgreen;
+    background: #ddddddff;
+    border: none;   
 }
 
 .sliders {
