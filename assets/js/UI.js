@@ -20,9 +20,6 @@ function blockSetter(x, y) {
             if (blocktype === " " || blocktype === "#") {
                 map[y][x] = blocktype;
             } else if (blocktype === "&" || blocktype === "X") {
-
-                console.log("test");
-
                 let block = getBlockByType(current_map, blocktype);
                 if (typeof block !== "undefined") {
                     map[block.y][block.x] = " ";
@@ -115,9 +112,6 @@ function setBorders() {
     for (const i in map) {
         const row = map[i];
         for (const s in row) {
-
-            console.log(map.length, row.length);
-
             if (i == 0 || i == map.length - 1 || s == 0 || s == row.length - 1) {
                 map[i][s] = "#";
             };
