@@ -1,10 +1,6 @@
 <?php
     include_once 'assets/php/dbh.inc.php';
     include_once 'assets/php/list.php';
-    include_once 'assets/php/read.php';
-    include_once 'assets/php/create.php';
-    include_once 'assets/php/update.php';
-    include_once 'assets/php/delete.php';
 ?>
 
 <!DOCTYPE html>
@@ -58,9 +54,9 @@
                 <i class="fas fa-trash-alt fa-3x" class="btn" id="hilfe"></i>
             </div>
 
-            <ul class="sidebar-nav">
-                <li><a href="#">Map 1</a><img src="./assets/img/Map1.jpg" class="map-picture"><img></li>
-                <li><a href="#">Map 2</a><img src="./assets/img/Map2.jpg" class="map-picture"><img></li>
+            <ul class="sidebar-nav" id="maplist">
+                <li><a href="#"><?php echo $arrResult[1]['name']; ?></a><img src="data:image/jpg;base64,<?php echo $arrResult[1]['thumb']; ?>" class="map-picture"><img></li>
+                <li><a href="#"><?php echo $arrResult[2]['name']; ?></a><img src="data:image/jpg;base64,<?php echo $arrResult[2]['thumb']; ?>" class="map-picture"><img></li>
                 <li><a href="#">Map 3</a><img src="./assets/img/Map3.jpg" class="map-picture"><img></li>
             </ul>
 

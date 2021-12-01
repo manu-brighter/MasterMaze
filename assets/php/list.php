@@ -6,40 +6,19 @@ $arrResult = [];
 $sql = "SELECT * FROM maps WHERE 1;";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
+$id = 0;
 
 if ($resultCheck > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
+        $id++;
 
-        $name = $row['name'];
-        $thumb = $row['thumbnail'];
-        $map = $row['map_object'];
-    
+        $arrResult[$id] = [
+            "name" => $row['name'],
+            "thumb" => base64_encode($row['thumbnail']),
+        ];
     } 
 } else {
     echo "No Maps available!";
 }
 
-
-
-$id = 1;
-$arrResult[$id] = [
-    "name" => $name,
-    "thumb" => $thumb,
-    "data" => $map
-];
-
-$id = 2;
-$arrResult[$id] = [
-    "name" => "",
-    "thumb" => "",
-    "data" => []
-];
-
-$id = 3;
-$arrResult[$id] = [
-    "name" => "",
-    "thumb" => "",
-    "data" => []
-];
-
-echo json_encode($arrResult, true);
+# echo json_encode($arrResult, true);

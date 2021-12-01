@@ -1,15 +1,17 @@
 $(() => {
 
     // variables
-    const startermap = GAME_MAP4;
+    const startermap = GAME_MAP1;
 
     // init
     iniateSliders();
     setMapVar(startermap);
     mouseCheck();
+    databaseStuff();
 
     // display map
     loadMap(startermap);
+
 
     // generate map
     //generateNewMap(startermap);
