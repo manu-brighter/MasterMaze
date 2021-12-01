@@ -16,7 +16,7 @@
   top: 5px;
   color: goldenrod;
   font-family: 'Road Rage', cursive;
-  font-size: 8vh;
+  font-size: 68px;
 }
 
 #lowerButtons{
@@ -42,7 +42,7 @@
 /* Sidebar */
 #sidebar-wrapper{
   z-index:1;
-  position: absolute;
+  position: fixed;
   width:0;
   height:100%;
   overflow-y:hidden;
@@ -114,7 +114,7 @@
 /* Sidebar */
 #sidebar-wrapper-right{
   z-index:1;
-  position: absolute;
+  position: fixed;
   right: 0px;
   width:0;
   height:100%;
