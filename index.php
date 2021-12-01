@@ -49,10 +49,16 @@
         <div id="sidebar-wrapper">
             <div class="save-icons">
                 <i class="fas fa-save fa-3x" class="btn"></i>
-                <i class="fas fa-trash-alt fa-3x" class="btn" id="hilfe"></i>
+                <i class="fas fa-trash-alt fa-3x" class="btn" id="trash"></i>
             </div>
 
+            
             <ul class="sidebar-nav" id="maplist">
+            <div id="mapdiv">
+                <li><a href="#">Map 1</a><img src="./assets/img/Map1.jpg" class="map-picture"><img></li>
+                <li><a href="#">Map 2</a><img src="./assets/img/Map2.jpg" class="map-picture"><img></li>
+                <li><a href="#">Map 3</a><img src="./assets/img/Map3.jpg" class="map-picture"><img></li>
+                </div>
             </ul>
 
         </div>
@@ -66,18 +72,21 @@
             <ul class="sidebar-nav-right">
                 <div class="sliders">
                     <li>
+                        <p class="sliderText">Map Width</p>
+                    </li>
+                    <li>
                         <div id="slider1">
                             <div id="custom-handle1" class="ui-slider-handle"></div>
                         </div>
                     </li>
-                    <br>
-                    <br>
+                    <li>
+                        <p class="sliderText">Map Height</p>
+                    </li>
                     <li>
                         <div id="slider2">
                             <div id="custom-handle2" class="ui-slider-handle"></div>
                         </div>
                     </li>
-                    <br>
 
                 </div>
 
@@ -149,15 +158,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="map"></div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 </body>
-
 </html>

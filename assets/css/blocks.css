@@ -1,21 +1,6 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    height: 100vh;
-}
-
 .buttontext {
-    font-size: 3vh;
+    font-size: 23px;
     font-family: 'Fredoka One', cursive;
-}
-
-.wrapper {
-    max-width: auto;
-    max-height: auto;
-    margin: auto;
 }
 
 .blocktypes {
@@ -24,44 +9,14 @@ body {
     color: #ddddddff;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
+    grid-gap: 5px 10px;
     grid-auto-flow: row;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .blocktypelist {
-    min-height: 170px;
-}
-
-.block {
-    margin: 4%;
-}
-
-.mapwrapper {
-    position: absolute;
-    width: 65%;
-    height: 100%;
-    float: left;
-    margin: 1% 7%;
-   /* background: mediumvioletred;*/
-}
-
-
-.UI {
-    margin: 4% 8%;
-    position: relative;
-    width: 35%;
-    height: 100%;
-    float: right;
-    /*background: skyblue;*/
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "."
-      "."
-      ".";
+    min-height: 160px;
 }
 
 .blockbutton {
@@ -71,6 +26,8 @@ body {
 
 #custom-handle1,
 #custom-handle2 {
+    font-family: 'Fredoka One', cursive;
+    color: #2a9d8fff;
     width: 3em;
     height: 1.6em;
     top: 50%;
@@ -82,12 +39,20 @@ body {
 #slider1,
 #slider2 {
     background: #ddddddff;
-    border: none;   
+    border: none;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.sliderText {
+    font-size: 23px;
+    font-family: 'Fredoka One', cursive;
+    color: #ddddddff;
+    margin: 0;
 }
 
 .sliders {
-    /*background: violet;*/
-    margin: 5%;
+    margin-bottom: 35px;
 }
 
 .map .block {

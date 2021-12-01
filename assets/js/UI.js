@@ -35,7 +35,7 @@ function blockSetter(x, y) {
 };
 
 function setMap(id) {
- 
+
     getMap(id);
 
     //loadMap(map);
