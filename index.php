@@ -1,8 +1,3 @@
-<?php
-    include_once 'assets/php/dbh.inc.php';
-    include_once 'assets/php/list.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +24,9 @@
         integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <style>@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Fredoka+One&family=Road+Rage&display=swap');</style>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Fredoka+One&family=Road+Rage&display=swap');
+    </style>
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <link href="./NewLayout/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
@@ -37,11 +34,12 @@
     <link rel="stylesheet" href="assets/css/blocks.css">
 
     <script src="./NewLayout/JS/NewJS.js"></script>
-    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/map.js"></script>
     <script src="./assets/js/Pathfinding.js"></script>
     <script src="./assets/js/UI.js"></script>
     <script src="./assets/js/generateMap.js"></script>
+    <script src="./assets/js/databaseStuff.js"></script>
+    <script src="./assets/js/main.js"></script>
 
 </head>
 
@@ -55,9 +53,6 @@
             </div>
 
             <ul class="sidebar-nav" id="maplist">
-                <li><a href="#"><?php echo $arrResult[1]['name']; ?></a><img src="data:image/jpg;base64,<?php echo $arrResult[1]['thumb']; ?>" class="map-picture"><img></li>
-                <li><a href="#"><?php echo $arrResult[2]['name']; ?></a><img src="data:image/jpg;base64,<?php echo $arrResult[2]['thumb']; ?>" class="map-picture"><img></li>
-                <li><a href="#">Map 3</a><img src="./assets/img/Map3.jpg" class="map-picture"><img></li>
             </ul>
 
         </div>
@@ -77,7 +72,7 @@
                     </li>
                     <br>
                     <br>
-                        <li>
+                    <li>
                         <div id="slider2">
                             <div id="custom-handle2" class="ui-slider-handle"></div>
                         </div>

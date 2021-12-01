@@ -1,9 +1,12 @@
 <?php
+
+include_once "dbh.inc.php"; 
+
 $arrResult = [];
 
 // Read from Mysql
 
-$sql = "SELECT * FROM maps WHERE 1;";
+$sql = "SELECT * FROM maps;";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
 $id = 0;
@@ -21,4 +24,4 @@ if ($resultCheck > 0) {
     echo "No Maps available!";
 }
 
-# echo json_encode($arrResult, true);
+echo json_encode($arrResult, true);

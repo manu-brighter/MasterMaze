@@ -34,6 +34,15 @@ function blockSetter(x, y) {
 
 };
 
+function setMap(id) {
+ 
+    getMap(id);
+
+    //loadMap(map);
+    //current_map = map;
+
+};
+
 function solveMap() {
     clearFootsteps();
     // calculate path and put it in the map

@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $("#menu-left-toggle").click(function(e){
       e.preventDefault();
+      getMaplist();
       $("#wrapper").toggleClass("menuDisplayed");
     });
 
@@ -8,9 +9,4 @@ $(document).ready(function(){
         e.preventDefault();
         $("#wrapper-right").toggleClass("menuDisplayed");
       });
-
-
-
-
-      
-  });
+});
