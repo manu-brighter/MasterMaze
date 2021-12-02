@@ -7,7 +7,7 @@ $(() => {
     iniateSliders();
     setMapVar(startermap);
     mouseCheck();
-    //getMaplist();
+    getMaplist();
 
     // display map
     loadMap(startermap);

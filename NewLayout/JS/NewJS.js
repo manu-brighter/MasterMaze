@@ -4,7 +4,7 @@ $(document).ready(function () {
 
   $("#menu-left-toggle").click(function (e) {
     e.preventDefault();
-    //getMaplist();
+    getMaplist();
     $("#wrapper").toggleClass("menuDisplayed");
 
     i = i === 0 ? 1 : 0;
@@ -17,4 +17,20 @@ $(document).ready(function () {
     e.preventDefault();
     $("#wrapper-right").toggleClass("menuDisplayed");
   });
+  
+  $("#title_reload").click(function (e) {
+    location.reload(true);
+  });
+
+  $("#save").click(function (e) {
+    clearFootsteps();
+    let map = current_map;
+    putMapinDB(map);
+  });
+
+$("#trash").click(function (e) {
+  deleteMapinDB();
+});
+
+
 });

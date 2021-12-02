@@ -48,16 +48,16 @@
         <!-- Sidebar left -->
         <div id="sidebar-wrapper">
             <div class="save-icons">
-                <i class="fas fa-save fa-3x" class="btn"></i>
+                <i class="fas fa-save fa-3x" class="btn" id="save"></i>
                 <i class="fas fa-trash-alt fa-3x" class="btn" id="trash"></i>
             </div>
 
-            
+
             <ul class="sidebar-nav" id="maplist">
-            <div id="mapdiv">
-                <li><a href="#">Map 1</a><img src="./assets/img/Map1.jpg" class="map-picture"><img></li>
-                <li><a href="#">Map 2</a><img src="./assets/img/Map2.jpg" class="map-picture"><img></li>
-                <li><a href="#">Map 3</a><img src="./assets/img/Map3.jpg" class="map-picture"><img></li>
+                <div id="mapdiv">
+                    <li><a href="#">Map 1</a><img src="./assets/img/Map1.jpg" class="map-picture"><img></li>
+                    <li><a href="#">Map 2</a><img src="./assets/img/Map2.jpg" class="map-picture"><img></li>
+                    <li><a href="#">Map 3</a><img src="./assets/img/Map3.jpg" class="map-picture"><img></li>
                 </div>
             </ul>
 
@@ -70,6 +70,9 @@
         <div id="sidebar-wrapper-right">
 
             <ul class="sidebar-nav-right">
+                <li>
+                    <input type="text" id="MapNameTextBox" name="MapName" class="form-control" placeholder="Map Name"/>
+                </li>
                 <div class="sliders">
                     <li>
                         <p class="sliderText">Map Width</p>
@@ -142,7 +145,7 @@
                 </ul>
 
                 <a class="navbar-brand pull-center" href="#">
-                    <p class="title">Maze Master</p>
+                    <p class="title" class="btn" id="title_reload">Maze Master</p>
                     <!--<img src="../assets/img/Logo.JPG" width="auto" height="70" alt="">-->
                 </a>
 
@@ -164,4 +167,5 @@
         </div>
     </div>
 </body>
+
 </html>

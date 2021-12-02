@@ -36,11 +36,10 @@ function blockSetter(x, y) {
 
 function setMap(id) {
 
-    getMap(id);
-
-    //loadMap(map);
-    //current_map = map;
-
+    getMap(id, (map) => {
+        loadMap(map);
+        current_map = map;
+    });
 };
 
 function solveMap() {
@@ -91,8 +90,6 @@ function mapSizer(valueslider1, valueslider2) {
         for (let s = 1; s <= width; s++) {
             row.push(" ");
         };
-
-        //console.log(row);
         map.push(row);
     };
 

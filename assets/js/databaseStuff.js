@@ -1,3 +1,5 @@
+let current_map_id = null;
+
 function getMaplist() {
     $("#maplist").html('<li><i class="fas fa-circle-notch fa-spin fa-3x" style="color: #ffffff;" class="btn"></i></li>');
     $.ajax({
@@ -8,9 +10,10 @@ function getMaplist() {
         $("#maplist").empty();
         for (const i in data) {
             const current_map = data[i];
+            let id = current_map.id;
             let name = current_map.name;
             let thumb = current_map.thumb;
-            $("#maplist").append('<li onclick="setMap(' + i + ')"><a href="#">' + name + '</a><img src="data:image/jpg;base64,' + thumb + '" class="map-picture"><img></li>');
+            $("#maplist").append('<li onclick="setMap(' + id + ')"><a href="#">' + name + '</a><img src="data:image/jpg;base64,' + thumb + '" class="map-picture"><img></li>');
         };
     }).fail((error) => {
         $("#maplist").html('<li><i class="fas fa-times fa-3x" style="color: #ff0000;" class="btn"></i></li>');
@@ -18,29 +21,62 @@ function getMaplist() {
 };
 
 
-function getMap(id) {
+function getMap(id, callback) {
 
     $(".map").empty();
-    $(".map").html('<i class="fas fa-circle-notch fa-spin fa-7x" style="color: #ddddddff;" class="btn"></i>');
+    $(".map").html('<i class="fas fa-circle-notch fa-spin fa-7x" style="color: #48284aff; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);" class="btn"></i>');
     $.ajax({
-        url: "assets/php/read.php",
-        type: "post",
-        data: {
-            id: id - 1
-        },
+        url: "assets/php/read.php?id=" + id,
+        type: "get",
         dataType: "json"
     }).done((data) => {
 
-        let name = data.name;
-        let map = data.map;
+        current_map_id = data.id;
+        let map = JSON.parse(data.map);
+        $('#MapNameTextBox').val(data.name)
+        getMaplist();
 
-
-        console.log(name, map);
-
+        if(typeof callback === 'function') {
+            callback(map);
+        }
 
     }).fail((error) => {
         $(".map").html('<i class="fas fa-times fa-7x" style="color: #ff0000;" class="btn"></i>');
     })
+};
 
 
+function putMapinDB(map){
+
+    $.ajax({
+        url: "assets/php/create.php",
+        type: "POST",
+        data: {
+            map: JSON.stringify(map),
+            mapname: $('#MapNameTextBox').val()
+        }
+    }).done((data) => {
+
+        getMaplist();
+
+    }).fail((error) => {
+        alert("cant access db")
+    })
+};
+
+function deleteMapinDB(){
+
+    $.ajax({
+        url: "assets/php/delete.php",
+        type: "POST",
+        data: {
+            id: current_map_id,
+        }
+    }).done((data) => {
+
+        getMaplist();
+
+    }).fail((error) => {
+        alert("wrong Map ID")
+    })
 };

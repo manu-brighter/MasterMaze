@@ -9,13 +9,13 @@ $arrResult = [];
 $sql = "SELECT * FROM maps;";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
-$id = 0;
+
 
 if ($resultCheck > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
-        $id++;
 
-        $arrResult[$id] = [
+        $arrResult[] = [
+            "id" => $row['id'],
             "name" => $row['name'],
             "thumb" => base64_encode($row['thumbnail']),
         ];

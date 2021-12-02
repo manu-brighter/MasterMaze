@@ -40,6 +40,11 @@
   font-size: 25px;
 }
 
+#MapNameTextBox{
+  margin-left: 45px;
+  width: 350px;
+}
+
 .map-picture {
   height: 50px;
   max-width: 250px;
@@ -48,7 +53,7 @@
 .save-icons {
   color: #7d5ba6ff;
   position: absolute;
-  margin-left: 61px;
+  margin-left: 17px;
   margin-top: 0px;
   top: 0;
 }
@@ -61,6 +66,14 @@
 .col-lg-12 {
   margin-top: 70px;
 }
+
+body {
+  background-image: url("../../assets/img/backgroundirt.jpg");
+
+  background-repeat: repeat;
+  /*background-attachment: fixed;*/
+  /*background-size: cover;*/
+ }
 
 /* Sidebar */
 #sidebar-wrapper {
