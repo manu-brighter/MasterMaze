@@ -1,4 +1,5 @@
 let current_map_id = null;
+let maplist = [];
 
 function getMaplist() {
     $("#maplist").html('<li><i class="fas fa-circle-notch fa-spin fa-3x" style="color: #ffffff;" class="btn"></i></li>');
@@ -10,6 +11,8 @@ function getMaplist() {
         $("#maplist").empty();
         for (const i in data) {
             const current_map = data[i];
+
+            maplist.push(data.id);
             let id = current_map.id;
             let name = current_map.name;
             let thumb = current_map.thumb;
@@ -19,7 +22,6 @@ function getMaplist() {
         $("#maplist").html('<li><i class="fas fa-times fa-3x" style="color: #ff0000;" class="btn"></i></li>');
     })
 };
-
 
 function getMap(id, callback) {
 
@@ -34,7 +36,6 @@ function getMap(id, callback) {
         current_map_id = data.id;
         let map = JSON.parse(data.map);
         $('#MapNameTextBox').val(data.name)
-        getMaplist();
 
         if(typeof callback === 'function') {
             callback(map);
@@ -45,8 +46,24 @@ function getMap(id, callback) {
     })
 };
 
+function deleteMapinDB(){
 
-function putMapinDB(map){
+    $.ajax({
+        url: "assets/php/delete.php",
+        type: "POST",
+        data: {
+            id: current_map_id
+        }
+    }).done((data) => {
+
+        getMaplist();
+
+    }).fail((error) => {
+        alert("wrong Map ID")
+    })
+};
+
+function createMapinDB(map){
 
     $.ajax({
         url: "assets/php/create.php",
@@ -64,13 +81,16 @@ function putMapinDB(map){
     })
 };
 
-function deleteMapinDB(){
+
+function updateMapinDB(map){
 
     $.ajax({
         url: "assets/php/delete.php",
         type: "POST",
         data: {
             id: current_map_id,
+            mapname: $('#MapNameTextBox').val(),
+            map: current_map_id,
         }
     }).done((data) => {
 

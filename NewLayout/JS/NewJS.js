@@ -9,7 +9,6 @@ $(document).ready(function () {
 
     i = i === 0 ? 1 : 0;
     let padding = i === 0 ? 250 : 0;
-
     document.getElementById("page-content-wrapper").style.paddingLeft = padding + "px";
   });
 
@@ -25,7 +24,25 @@ $(document).ready(function () {
   $("#save").click(function (e) {
     clearFootsteps();
     let map = current_map;
-    putMapinDB(map);
+    let mapexists = false;
+
+    
+
+    for (const i in maplist) {
+      const mapid = maplist[i];
+        mapexists = mapid === current_map_id ? true : mapexists;
+    }
+
+    console.log(mapexists, maplist, current_map_id);
+
+    if (mapexists){
+    updateMapinDB(map);
+  } else {
+    createMapinDB(map);
+  };
+
+
+    
   });
 
 $("#trash").click(function (e) {
