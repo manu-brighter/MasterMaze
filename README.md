@@ -4,7 +4,7 @@ Get the fastest Path from the Player to the Treasure and edit or create new Maps
 
 * * *
 
-==TODO: important==
+**TODO: important**
 - map thumbnail
 - prevent sql injection
 - on load: load first map of db, if db is empty create default map, safe in db and display default db
@@ -12,7 +12,7 @@ Get the fastest Path from the Player to the Treasure and edit or create new Maps
 - on map load, set slider to map size
 - pathfinding update blocks
 
-==TODO: not so important==
+**TODO: not so important**
 - SNES Style
 - mobile version
 - better map editing performance
