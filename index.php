@@ -50,6 +50,7 @@
             <div class="save-icons">
                 <i class="fas fa-save fa-3x" class="btn" id="save"></i>
                 <i class="fas fa-trash-alt fa-3x" class="btn" id="trash"></i>
+                <i class="fas fa-plus-circle fa-3x" class="btn" id="add"></i>
             </div>
 
 

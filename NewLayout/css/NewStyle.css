@@ -51,16 +51,16 @@
 }
 
 .save-icons {
-  color: #7d5ba6ff;
-  position: absolute;
-  margin-left: 17px;
-  margin-top: 0px;
+  position:absolute;
   top: 0;
-}
-
-#trash {
-  margin-left: 30px;
-  margin-top: 20px;
+  color: #7d5ba6ff;
+  padding: 17px;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 25px; 
+  grid-template-areas: 
+    ". . ."; 
 }
 
 .col-lg-12 {
@@ -80,9 +80,9 @@ body {
   top: 70px;
   z-index: 1;
   position: fixed;
-  width: 250px;
+  width: 230px;
   height: 100%;
-  left: -250px;
+  left: -230px;
   overflow-y: hidden;
   background: #48284aff;
   opacity: 1;

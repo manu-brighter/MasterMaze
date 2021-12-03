@@ -1,5 +1,8 @@
 let current_map_id = null;
-let maplist = [];
+let maplist = [{
+    "id": null,
+    "map": null,
+}];
 
 function getMaplist() {
     $("#maplist").html('<li><i class="fas fa-circle-notch fa-spin fa-3x" style="color: #ffffff;" class="btn"></i></li>');
@@ -12,7 +15,7 @@ function getMaplist() {
         for (const i in data) {
             const current_map = data[i];
 
-            maplist.push(data.id);
+            maplist.push(current_map.map);
             let id = current_map.id;
             let name = current_map.name;
             let thumb = current_map.thumb;
@@ -85,12 +88,12 @@ function createMapinDB(map){
 function updateMapinDB(map){
 
     $.ajax({
-        url: "assets/php/delete.php",
+        url: "assets/php/update.php",
         type: "POST",
         data: {
             id: current_map_id,
             mapname: $('#MapNameTextBox').val(),
-            map: current_map_id,
+            map: JSON.stringify(map),
         }
     }).done((data) => {
 

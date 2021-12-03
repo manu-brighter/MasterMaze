@@ -40,6 +40,7 @@ function setMap(id) {
         loadMap(map);
         current_map = map;
     });
+
 };
 
 function solveMap() {

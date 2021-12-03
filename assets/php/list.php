@@ -18,6 +18,7 @@ if ($resultCheck > 0) {
             "id" => $row['id'],
             "name" => $row['name'],
             "thumb" => base64_encode($row['thumbnail']),
+            "map" => $row['map_object']
         ];
     } 
 } else {

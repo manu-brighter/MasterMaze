@@ -8,7 +8,7 @@ $(document).ready(function () {
     $("#wrapper").toggleClass("menuDisplayed");
 
     i = i === 0 ? 1 : 0;
-    let padding = i === 0 ? 250 : 0;
+    let padding = i === 0 ? 230 : 0;
     document.getElementById("page-content-wrapper").style.paddingLeft = padding + "px";
   });
 
@@ -16,7 +16,7 @@ $(document).ready(function () {
     e.preventDefault();
     $("#wrapper-right").toggleClass("menuDisplayed");
   });
-  
+
   $("#title_reload").click(function (e) {
     location.reload(true);
   });
@@ -26,28 +26,19 @@ $(document).ready(function () {
     let map = current_map;
     let mapexists = false;
 
-    
-
-    for (const i in maplist) {
-      const mapid = maplist[i];
-        mapexists = mapid === current_map_id ? true : mapexists;
-    }
-
-    console.log(mapexists, maplist, current_map_id);
-
-    if (mapexists){
     updateMapinDB(map);
-  } else {
-    createMapinDB(map);
-  };
-
-
-    
   });
 
-$("#trash").click(function (e) {
-  deleteMapinDB();
-});
+  $("#trash").click(function (e) {
+    deleteMapinDB();
+  });
 
+  $("#add").click(function (e) {
+    clearFootsteps();
+    let map = current_map;
+    let mapexists = false;
+
+    createMapinDB(map);
+  });
 
 });
