@@ -14,17 +14,23 @@ function getMaplist() {
         $("#maplist").empty();
         for (const i in data) {
             const current_map = data[i];
+            const isActive = current_map_id === current_map.id ? "active" : "";
 
             maplist.push(current_map.map);
             let id = current_map.id;
             let name = current_map.name;
             let thumb = current_map.thumb;
-            $("#maplist").append('<li onclick="setMap(' + id + ')"><a href="#">' + name + '</a><img src="data:image/jpg;base64,' + thumb + '" class="map-picture"><img></li>');
+            $("#maplist").append('<li onclick="resetActive(this);setMap(' + id + ')" class="' + isActive + '"><a href="#">' + name + '</a><img src="assets/php/thumbnail.php?id=' + id + '&cache=' + Date.now() + '" class="map-picture"><img></li>');
         };
     }).fail((error) => {
         $("#maplist").html('<li><i class="fas fa-times fa-3x" style="color: #ff0000;" class="btn"></i></li>');
     })
 };
+
+function resetActive(el) {
+    $("#maplist li.active").removeClass("active");
+    $(el).addClass("active");
+}
 
 function getMap(id, callback) {
 
@@ -37,8 +43,18 @@ function getMap(id, callback) {
     }).done((data) => {
 
         current_map_id = data.id;
+        current_map = JSON.parse(data.map);
         let map = JSON.parse(data.map);
         $('#MapNameTextBox').val(data.name)
+
+        let height = map.length;
+        let width = map[0].length;
+    
+        $("#slider1").slider({value: width});
+        $("#slider1").find("#custom-handle1").html(width);
+
+        $("#slider2").slider({value: height});
+        $("#slider2").find("#custom-handle2").html(height);
 
         if(typeof callback === 'function') {
             callback(map);

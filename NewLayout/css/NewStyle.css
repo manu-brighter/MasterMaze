@@ -47,7 +47,8 @@
 
 .map-picture {
   height: 50px;
-  max-width: 250px;
+  max-width: 200px;
+  margin-bottom: 10px;
 }
 
 .save-icons {
@@ -194,4 +195,9 @@ body {
 
 .sidebar-nav-right li:hover {
   background: #2a9d8fff;
+}
+
+
+#maplist li.active {
+  background-color: #230C33;
 }

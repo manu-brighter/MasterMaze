@@ -1,22 +1,22 @@
 $(() => {
 
-    // variables
-    const startermap = GAME_MAP1;
-
     // init
     iniateSliders();
-    setMapVar(startermap);
-    mouseCheck();
-    getMaplist();
+    getMap(null, (map) => {
+        loadMap(map);
+        current_map = map;
+        
+        mouseCheck();
+        getMaplist();
 
-    // display map
-    loadMap(startermap);
-
+        mapSizer(min_value, min_value);
+    });
+    
 
     // generate map
     //generateNewMap(startermap);
 
     // size map
-    mapSizer(min_value, min_value);
+
 
 });

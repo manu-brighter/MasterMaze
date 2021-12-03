@@ -4,10 +4,11 @@ $(document).ready(function () {
 
   $("#menu-left-toggle").click(function (e) {
     e.preventDefault();
-    getMaplist();
     $("#wrapper").toggleClass("menuDisplayed");
 
     i = i === 0 ? 1 : 0;
+    if (i === 0){ getMaplist(); };
+
     let padding = i === 0 ? 230 : 0;
     document.getElementById("page-content-wrapper").style.paddingLeft = padding + "px";
   });

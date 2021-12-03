@@ -17,20 +17,21 @@ function blockSetter(x, y) {
 
     if (blocktype != null) {
         if (mouseDown === 1) {
-            if (blocktype === " " || blocktype === "#") {
-                map[y][x] = blocktype;
-            } else if (blocktype === "&" || blocktype === "X") {
+            if (blocktype === "&" || blocktype === "X") {
                 let block = getBlockByType(current_map, blocktype);
                 if (typeof block !== "undefined") {
                     map[block.y][block.x] = " ";
-                };
+                };    
+            };
 
+            if(map[y][x] !== blocktype) {
                 map[y][x] = blocktype;
+                loadMap(map);
+                current_map = map;
             };
         };
     };
-    loadMap(map);
-    current_map = map;
+
 
 };
 
@@ -126,7 +127,7 @@ function setBorders() {
         };
     };
 
-    current_map = map
+    current_map = map;
     loadMap(map);
 };
 
@@ -140,7 +141,7 @@ function clearMap() {
         };
     };
 
-    current_map = map
+    current_map = map;
     loadMap(map);
 };
 
@@ -154,7 +155,7 @@ function clearMapToStone() {
         };
     };
 
-    current_map = map
+    current_map = map;
     loadMap(map);
 };
 
@@ -178,7 +179,7 @@ function clearFootsteps() {
         };
     };
 
-    current_map = map
+    current_map = map;
     loadMap(map);
 };
 

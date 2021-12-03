@@ -55,11 +55,6 @@
 
 
             <ul class="sidebar-nav" id="maplist">
-                <div id="mapdiv">
-                    <li><a href="#">Map 1</a><img src="./assets/img/Map1.jpg" class="map-picture"><img></li>
-                    <li><a href="#">Map 2</a><img src="./assets/img/Map2.jpg" class="map-picture"><img></li>
-                    <li><a href="#">Map 3</a><img src="./assets/img/Map3.jpg" class="map-picture"><img></li>
-                </div>
             </ul>
 
         </div>
@@ -69,8 +64,10 @@
     <div id="wrapper-right">
         <!-- Sidebar right -->
         <div id="sidebar-wrapper-right">
-
             <ul class="sidebar-nav-right">
+            <li>
+                        <p class="sliderText">Map Name</p>
+                    </li>
                 <li>
                     <input type="text" id="MapNameTextBox" name="MapName" class="form-control" placeholder="Map Name"/>
                 </li>
@@ -100,16 +97,16 @@
                         <div class="blocktypes">
 
                             <div class="button" id="dirtbutton" onclick="dirtbutton()">
-                                <img class="blockbutton" src="./assets/img/dirt.jpg"></img>
+                                <img class="blockbutton" src="./assets/img/dirt2.jpg"></img>
                             </div>
                             <div class="button" id="stonebutton" onclick="stonebutton()">
-                                <img class="blockbutton" src="./assets/img/stone.jpg"></img>
+                                <img class="blockbutton" src="./assets/img/stone2.jpg"></img>
                             </div>
                             <div class="button" id="startbutton" onclick="startbutton()">
-                                <img class="blockbutton" src="./assets/img/start.jpg"></img>
+                                <img class="blockbutton" src="./assets/img/start2.jpg"></img>
                             </div>
                             <div class="button" id="treasurebutton" onclick="treasurebutton()">
-                                <img class="blockbutton" src="./assets/img/treasure.jpg"></img>
+                                <img class="blockbutton" src="./assets/img/treasure2.jpg"></img>
                             </div>
                             <div class="buttontext">
                                 <p>Dirt</p>
