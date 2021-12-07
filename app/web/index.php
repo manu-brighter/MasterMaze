@@ -29,17 +29,17 @@
     </style>
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-    <link href="./NewLayout/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="./NewLayout/css/NewStyle.css">
-    <link rel="stylesheet" href="assets/css/blocks.css">
+    <link href="../assets/sonstiges/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/blocks.css">
 
-    <script src="./NewLayout/JS/NewJS.js"></script>
-    <script src="./assets/js/map.js"></script>
-    <script src="./assets/js/Pathfinding.js"></script>
-    <script src="./assets/js/UI.js"></script>
-    <script src="./assets/js/generateMap.js"></script>
-    <script src="./assets/js/databaseStuff.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/map.js"></script>
+    <script src="../assets/js/Pathfinding.js"></script>
+    <script src="../assets/js/UI.js"></script>
+    <script src="../assets/js/generateMap.js"></script>
+    <script src="../assets/js/databaseStuff.js"></script>
+    <script src="../assets/js/main.js"></script>
 
 </head>
 
@@ -97,16 +97,16 @@
                         <div class="blocktypes">
 
                             <div class="button" id="dirtbutton" onclick="dirtbutton()">
-                                <img class="blockbutton" src="./assets/img/dirt2.jpg"></img>
+                                <img class="blockbutton" src="../assets/img/dirt2.jpg"></img>
                             </div>
                             <div class="button" id="stonebutton" onclick="stonebutton()">
-                                <img class="blockbutton" src="./assets/img/stone2.jpg"></img>
+                                <img class="blockbutton" src="../assets/img/stone2.jpg"></img>
                             </div>
                             <div class="button" id="startbutton" onclick="startbutton()">
-                                <img class="blockbutton" src="./assets/img/start2.jpg"></img>
+                                <img class="blockbutton" src="../assets/img/start2.jpg"></img>
                             </div>
                             <div class="button" id="treasurebutton" onclick="treasurebutton()">
-                                <img class="blockbutton" src="./assets/img/treasure2.jpg"></img>
+                                <img class="blockbutton" src="../assets/img/treasure2.jpg"></img>
                             </div>
                             <div class="buttontext">
                                 <p>Dirt</p>
@@ -144,7 +144,6 @@
 
                 <a class="navbar-brand pull-center" href="#">
                     <p class="title" class="btn" id="title_reload">Maze Master</p>
-                    <!--<img src="../assets/img/Logo.JPG" width="auto" height="70" alt="">-->
                 </a>
 
                 <ul class="nav navbar-nav navbar-right">

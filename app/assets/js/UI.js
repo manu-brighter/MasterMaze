@@ -195,7 +195,7 @@ function changeMouse(type) {
     const loc = window.location.pathname;
     const dir = loc.substring(0, loc.lastIndexOf('/'));
     current_block_type = type;
-    let src = dir + "/assets/img/" + type + "cursor.png";
+    let src = /*dir*/"" + "../assets/img/" + type + "cursor.png";
 
     body.style.cursor = 'url(' + src + ') 16 16, default';
 };
