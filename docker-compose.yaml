@@ -1,0 +1,22 @@
+version: '3'
+services:
+  app:
+    #build: .
+    image: php:apache-bullseye
+    volumes:
+      - ./app:/var/www/html
+    labels:
+      - "traefik.frontend.rule=Host:mazemaster"
+      - "traefik.enable=true"
+    ports:
+      - 80:80
+  
+  database:
+    image: mariadb
+    volumes:
+      - database-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+
+volumes:
+  database-data:

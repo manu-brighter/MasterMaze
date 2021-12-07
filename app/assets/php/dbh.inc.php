@@ -2,9 +2,9 @@
 
 // ci cd
 
-$dbServername = "localhost";
+$dbServername = "database";
 $dbUsername = "root";
-$dbPassword = "";
+$dbPassword = "password";
 $dbName = "mazemaster";
 
 /*
