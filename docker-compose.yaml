@@ -1,8 +1,10 @@
 version: '3'
 services:
   app:
-    #build: .
-    image: php:apache-bullseye
+    build: .
+    #image: php:apache-bullseye
+    depends_on:
+      - mastermaze_database_1
     volumes:
       - ./app:/var/www/html
     labels:
@@ -19,6 +21,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: mazemaster
+      MYSQL_USER: root
     ports:
       - 3306:3306
 
