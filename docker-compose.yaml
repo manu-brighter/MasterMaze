@@ -19,7 +19,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: mazemaster
-
+    ports:
+      - 3306:3306
 
 volumes:
   database-data:

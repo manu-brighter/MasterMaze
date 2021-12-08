@@ -2,7 +2,7 @@
 
 // ci cd
 
-$dbServername = "database";
+$dbServername = "mastermaze_database_1";
 $dbUsername = "root";
 $dbPassword = "password";
 $dbName = "mazemaster";
