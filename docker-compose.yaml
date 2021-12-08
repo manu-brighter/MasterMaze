@@ -14,9 +14,12 @@ services:
   database:
     image: mariadb
     volumes:
+      - ./app/assets/database/dumbfile.sql:/docker-entrypoint-initdb.d/dumbfile.sql
       - database-data:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=password
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: mazemaster
+
 
 volumes:
   database-data:
