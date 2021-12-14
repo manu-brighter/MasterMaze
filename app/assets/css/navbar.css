@@ -70,10 +70,12 @@
 
 body {
   background-image: url("../../assets/img/backgroundirt.jpg");
-
   background-repeat: repeat;
   /*background-attachment: fixed;*/
   /*background-size: cover;*/
+
+  min-width: 100vh;
+  min-height: 100vh;
  }
 
 /* Sidebar */

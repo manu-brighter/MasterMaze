@@ -185,17 +185,11 @@ function clearFootsteps() {
 
 function changeMouse(type) {
 
-    $('body').on("click", "#stonebutton", () => {
-
-    });
-
     const body = document.body;
     body.id = (body.id) ? body.id : 'body_id'; // ffox
 
-    const loc = window.location.pathname;
-    const dir = loc.substring(0, loc.lastIndexOf('/'));
     current_block_type = type;
-    let src = /*dir*/"" + "../assets/img/" + type + "cursor.png";
+    let src = "../assets/img/" + type + "cursor.png";
 
     body.style.cursor = 'url(' + src + ') 16 16, default';
 };
